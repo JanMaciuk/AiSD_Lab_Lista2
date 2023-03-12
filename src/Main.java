@@ -11,10 +11,10 @@ public class Main {
 
         //Generowanie pracowników
         PracownikGodzinowy pg1 = new PracownikGodzinowy("Marek", "Kowalski", 123456789, "Recepcjonista", 5, 25, 50);
-        PracownikGodzinowy pg2 = new PracownikGodzinowy("Kuba", "Duda", 123456789, "Kierowca",1,20,60);
-        PracownikEtatowy pe1 = new PracownikEtatowy("Jan", "Kowalski", 123456789, "Kierowca", 2, 40, 22);
-        PracownikEtatowy pe2 = new PracownikEtatowy("Adam", "Spory", 123456789, "kierownik", 12, 30, 50);
-        PracownikEtatowy pe3 = new PracownikEtatowy("Jakub", "Spory", 123456789, "Magazynier", 12, 40, 35);
+        PracownikGodzinowy pg2 = new PracownikGodzinowy("Kuba", "Duda", 123456789, "Kierowca",1,20,40);
+        PracownikEtatowy pe1 = new PracownikEtatowy("Jan", "Kowalski", 123456789, "Kierowca", 2, 1, 850);
+        PracownikEtatowy pe2 = new PracownikEtatowy("Adam", "Spory", 123456789, "kierownik", 12, 0.5, 1000);
+        PracownikEtatowy pe3 = new PracownikEtatowy("Jakub", "Spory", 123456789, "Magazynier", 12, 0.75, 1750);
         Pracownik[] pracownicy = {pg1, pg2, pe1, pe2,pe3};
 
         //Zapisywanie danych do listy
