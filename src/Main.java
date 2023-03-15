@@ -5,17 +5,18 @@ import java.io.ObjectOutputStream;
 import java.util.Iterator;
 
 public class Main {
-    protected static int liczbaPracownikow = 5;
+    protected static int liczbaPracownikow = 6;
     protected static String[] danePracownikow = new String[liczbaPracownikow*6];
     public static void main(String[] args) {
 
         //Generowanie pracowników
         PracownikGodzinowy pg1 = new PracownikGodzinowy("Marek", "Kowalski", 123456789, "Recepcjonista", 5, 25, 50);
         PracownikGodzinowy pg2 = new PracownikGodzinowy("Kuba", "Duda", 123456789, "Kierowca",1,20,40);
+        PracownikGodzinowy pg3 = new PracownikGodzinowy("Jakub", "Ptak", 123456789, "Magazynier",2,25,40);
         PracownikEtatowy pe1 = new PracownikEtatowy("Jan", "Kowalski", 123456789, "Kierowca", 2, 1, 850);
-        PracownikEtatowy pe2 = new PracownikEtatowy("Adam", "Spory", 123456789, "kierownik", 12, 0.5, 1000);
+        PracownikEtatowy pe2 = new PracownikEtatowy("Adam", "Spory", 123456789, "Kierownik", 12, 0.5, 2500);
         PracownikEtatowy pe3 = new PracownikEtatowy("Jakub", "Spory", 123456789, "Magazynier", 12, 0.75, 1750);
-        Pracownik[] pracownicy = {pg1, pg2, pe1, pe2,pe3};
+        Pracownik[] pracownicy = {pg1, pg2, pg3, pe1, pe2, pe3};
 
         //Zapisywanie danych do listy
         int j = 0;
