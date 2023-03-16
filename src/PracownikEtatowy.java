@@ -13,12 +13,13 @@ public class PracownikEtatowy extends Pracownik implements Serializable {
         this.etat = etat;
         this.stawka = stawka;
     }
-    public double pensja() {
-        return stawka*etat;
+    public String pensja() {
+        return String.format("%.2f",stawka*etat);
     }
 
+
     public String toString() {
-        return String.format("Imie: %s, Nazwisko: %s, Pesel: %d, Stanowisko: %s, Staz: %d, Pensja: %.2f", imie, nazwisko, pesel, stanowisko, staz,pensja());
+        return String.format("Imie: %s, Nazwisko: %s, Pesel: %d, Stanowisko: %s, Staz: %d, Pensja: %s", imie, nazwisko, pesel, stanowisko, staz,pensja());
     }
 
 }

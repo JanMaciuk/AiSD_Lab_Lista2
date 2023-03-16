@@ -18,7 +18,7 @@ public class Main {
         PracownikEtatowy pe3 = new PracownikEtatowy("Jakub", "Spory", 123456789, "Magazynier", 12, 0.75, 1750);
         Pracownik[] pracownicy = {pg1, pg2, pg3, pe1, pe2, pe3};
 
-        //Zapisywanie danych do listy
+        //W pętli czytam dane pracowników i zapisuje do listy:
         int j = 0;
         for (Pracownik pracownik : pracownicy) {
             danePracownikow[j] = pracownik.nazwisko;
@@ -26,7 +26,7 @@ public class Main {
             danePracownikow[j + 2] = Long.toString(pracownik.pesel);
             danePracownikow[j + 3] = pracownik.stanowisko;
             danePracownikow[j + 4] = Integer.toString(pracownik.staz);
-            danePracownikow[j + 5] = Double.toString(pracownik.pensja());
+            danePracownikow[j + 5] = pracownik.pensja();
             j = j + 6;
         }
         printTabela();
@@ -37,10 +37,10 @@ public class Main {
 
     public static void printTabela() {//Wyświetlanie danych
         System.out.printf("-------------------------------------------------------------------------------------%n");
-        System.out.printf("| %-12s | %-10s | %-14s | %-14s | %-6s | %-10s |%n", "Nazwisko", "Imie", "Pesel", "Stanowisko", "Staz", "Pensja");
+        System.out.printf("| %-12s | %-10s | %-12s | %-14s | %-6s | %-10s |%n", "Nazwisko", "Imie", "Pesel", "Stanowisko", "Staz", "Pensja");
         System.out.printf("-------------------------------------------------------------------------------------%n");
         for (int i = 0; i < danePracownikow.length; i+=6) {
-            System.out.printf("| %-12s | %-10s | %-14s | %-14s | %-6s | %-10s |%n", danePracownikow[i], danePracownikow[i+1], danePracownikow[i+2], danePracownikow[i+3], danePracownikow[i+4], danePracownikow[i+5]);
+            System.out.printf("| %-12s | %-10s | %12s | %-14s | %6s | %10s |%n", danePracownikow[i], danePracownikow[i+1], danePracownikow[i+2], danePracownikow[i+3], danePracownikow[i+4], danePracownikow[i+5]);
         }
         System.out.printf("-------------------------------------------------------------------------------------%n%n");}
 
@@ -74,7 +74,7 @@ public class Main {
     public static void fileWriteRead(Pracownik[] pracownicy) {
         //Zapis:
         try {
-            FileOutputStream fout = new FileOutputStream("plik.txt");
+            FileOutputStream fout = new FileOutputStream("daneProgramu");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
             oos.writeObject(liczbaPracownikow);
             for (Pracownik pracownik : pracownicy) {
@@ -88,7 +88,7 @@ public class Main {
         }
         //Odczyt:
         try {
-            FileInputStream fin = new FileInputStream("plik.txt");
+            FileInputStream fin = new FileInputStream("daneProgramu");
             ObjectInputStream ois = new ObjectInputStream(fin);
             int liczbazPliku = (int) ois.readObject();
             Pracownik[] pracownicyzPliku = new Pracownik[liczbazPliku];

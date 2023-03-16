@@ -14,10 +14,10 @@ public class PracownikGodzinowy extends Pracownik implements Serializable {
         this.stawka = stawka;
         this.liczba_godz = liczba_godz;
     }
-    public double pensja() {
-        return stawka*liczba_godz;
+    public String pensja() {
+            return String.format("%.2f",stawka*liczba_godz);
     }
     public String toString() {
-        return String.format("%s, %s, %d, %s, %d, %.2f", imie, nazwisko, pesel, stanowisko, staz, pensja());
+        return String.format("%s, %s, %d, %s, %d, %s", imie, nazwisko, pesel, stanowisko, staz, pensja());
     }
 }
